@@ -1,0 +1,13 @@
+name = "cf-worker-ai-stable-diffusion"
+main = "src/index.ts"
+compatibility_date = "2023-02-03"
+node_compat = true
+account_id = "34018b4941d2988926ae8ac16f096d26"
+
+routes = [
+    { pattern = "stable-diffusion.boris1993.com/*", zone_name = "boris1993.com" },
+    { pattern = "stable-diffusion.boris1993.com", custom_domain = true },
+]
+
+[ai]
+binding = "AI" # i.e. available in your Worker on env.AI.
