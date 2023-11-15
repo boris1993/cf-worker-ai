@@ -5,9 +5,8 @@ node_compat = true
 account_id = "34018b4941d2988926ae8ac16f096d26"
 
 routes = [
-    { pattern = "stable-diffusion.boris1993.com/*", zone_name = "boris1993.com" },
-    { pattern = "stable-diffusion.boris1993.com", custom_domain = true },
+    { pattern = "worker-ai.boris1993.com/stable-diffusion", zone_name = "boris1993.com" }
 ]
 
 [ai]
-binding = "AI" # i.e. available in your Worker on env.AI.
+binding = "AI"
