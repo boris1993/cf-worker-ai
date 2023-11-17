@@ -4,7 +4,7 @@ compatibility_date = "2023-10-30"
 account_id = "34018b4941d2988926ae8ac16f096d26"
 
 routes = [
-    { pattern = "ai-worker.boris1993.com/*", zone_name = "boris1993.com" }
+    { pattern = "ai-worker.boris1993.com", custom_domain = true }
 ]
 
 [ai]
