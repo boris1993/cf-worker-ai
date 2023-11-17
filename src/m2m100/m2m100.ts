@@ -21,5 +21,12 @@ export async function translate(
         }
     );
 
-    return new Response(JSON.stringify(response));
+    return new Response(
+        JSON.stringify(response), 
+        {
+            headers: {
+                'content-type': 'application/json',
+            }
+        }
+    );
 }

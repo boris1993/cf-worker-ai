@@ -18,11 +18,11 @@ export async function draw(
         num_steps: requestBody.numSteps || 20
     };
 
-    const response = await ai.run("@cf/stabilityai/stable-diffusion-xl-base-1.0", inputs);
+    const response = await ai.run('@cf/stabilityai/stable-diffusion-xl-base-1.0', inputs);
 
     return new Response(response, {
         headers: {
-            "content-type": "image/png",
+            'content-type': 'image/png',
         },
     });
 }
@@ -30,7 +30,7 @@ export async function draw(
 
 function extractParameters(request: Request): [string, number] {
     if (request.method === 'POST') {
-        return ["", 0]
+        return ['', 0]
     } else {
         const url = new URL(request.url);
         const urlParams = url.searchParams;
