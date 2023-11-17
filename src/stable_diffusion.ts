@@ -1,6 +1,5 @@
+import { StableDiffusionRequestBody } from './model';
 import { Ai } from '@cloudflare/ai';
-import { AiTextToImageInput } from '@cloudflare/ai/dist/tasks/text-to-image';
-import { RequestBody } from './model';
 
 export async function draw(
     request: Request, 
@@ -12,13 +11,14 @@ export async function draw(
         });
     }
 
-    const requestBody: RequestBody = await request.json();
-    const inputs: AiTextToImageInput = {
-        prompt: requestBody.prompt,
-        num_steps: requestBody.numSteps || 20
-    };
-
-    const response = await ai.run('@cf/stabilityai/stable-diffusion-xl-base-1.0', inputs);
+    const requestBody: StableDiffusionRequestBody = await request.json();
+    const response = await ai.run(
+        '@cf/stabilityai/stable-diffusion-xl-base-1.0', 
+        {
+            prompt: requestBody.prompt,
+            num_steps: requestBody.numSteps || 20
+        }
+    );
 
     return new Response(response, {
         headers: {

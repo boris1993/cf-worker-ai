@@ -1,4 +1,4 @@
-import { RequestBody } from './model';
+import { TranslateAPIRequestBody } from './model';
 import { Ai } from '@cloudflare/ai';
 
 export async function translate(
@@ -11,7 +11,7 @@ export async function translate(
         });
     }
 
-    const requestBody: RequestBody = await request.json();
+    const requestBody: TranslateAPIRequestBody = await request.json();
     const response = await ai.run(
         '@cf/meta/m2m100-1.2b',
         {
