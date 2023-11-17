@@ -1,5 +1,5 @@
-import { translate } from './m2m100/m2m100';
-import { draw } from './stable-diffusion/stable_diffusion';
+import { translate } from './translate';
+import { draw } from './stable_diffusion';
 import { Ai } from '@cloudflare/ai';
 
 export interface Env {
