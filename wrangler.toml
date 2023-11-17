@@ -1,11 +1,10 @@
 name = "cf-worker-ai-stable-diffusion"
 main = "src/index.ts"
-compatibility_date = "2023-02-03"
-node_compat = true
+compatibility_date = "2023-10-30"
 account_id = "34018b4941d2988926ae8ac16f096d26"
 
 routes = [
-    { pattern = "worker-ai.boris1993.com/stable-diffusion", zone_name = "boris1993.com" }
+    { pattern = "ai-worker.boris1993.com/*", zone_name = "boris1993.com" }
 ]
 
 [ai]
