@@ -1,16 +1,17 @@
-import { Env } from '../env';
 import { Ai } from '@cloudflare/ai';
 import { AiTextToImageInput } from '@cloudflare/ai/dist/tasks/text-to-image';
 import { RequestBody } from './model';
 
-export async function draw(request: Request, env: Env): Promise<Response> {
+export async function draw(
+    request: Request, 
+    ai: Ai
+): Promise<Response> {
     if (request.method != 'POST') {
         return new Response(null, {
             status: 405
         });
     }
 
-    const ai = new Ai(env.AI);
     const requestBody: RequestBody = await request.json();
     const inputs: AiTextToImageInput = {
         prompt: requestBody.prompt,
